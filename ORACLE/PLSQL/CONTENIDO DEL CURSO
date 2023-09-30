@@ -1,0 +1,18 @@
+/*************************************************************************************************************************/
+***** INTRODUCCION AL CURSO *****
+      * CONTENIDO DEL CURSO:
+        01. INTRODUCCION A PL/SQL.
+        02. PREPARAR LA INFRAESTRUCTURA.
+        03. BLOQUES DE PL-SQL.
+        04. VARIABLES, ESTRUCTURAS DE CONTROL, BLUCLES.
+        05. USO DE SQL EN PL/SQL.
+        06. EXCEPCIONES.
+        07. COLECCIONES Y TIPOS ASOCIADOS.
+        08. CURSORES. 
+        09. PROCEDIMIENTOS Y FUNCIONES.
+        10. PAQUETES.
+        11. TRIGGERS.
+        
+      * HERRAMIENTAS A UTILIZAR:
+        - Oracle Database Express Edition 21c.
+        - Oracle SQL Developer.

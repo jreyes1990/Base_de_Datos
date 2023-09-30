@@ -103,5 +103,9 @@
             ALTER USER HR IDENTIFIED BY HR;
             
             
+***** SECCION 5 - PRIMEROS PASOS EN PL/SQL *****
+      * BLOQUES ANONIMOS:
+        
+            
             
             

@@ -76,3 +76,32 @@
        - Windows o linux
        - 2GB de RAM
        - 10GB de espacio en disco.
+       
+     * SI ESTA UTILIZANDO ORACLE11G EXPRESS, SEGUIR LOS SIGUIENTE PASOS, ENLACE: http://blog.hadsonpar.com/2016/04/habilitar-usuario-hr-oracle.html
+       - Habilitar Usuario HR Oracle 
+         Al realizar la primera instalación del Oracle, el usuario HR por defecto está bloqueado y por ende no podemos loguearnos como dicho usuario, lo que debe hacer son los siguiente pasos, 
+         aplicables para Linux o Windows.
+       - NOTA: A partir de la version 21, Oracle Express decidio eliminar de la instacion el USUARIO "HR"
+        
+       * UBICACION: ( /Documentos/BBDD/ORACLE/PLSQL/SECCION 2 - PREPARACION INFRAESTRUCTURA ), 
+         - CONEXION DESDE LA TERMINAL: 
+           sqlplus system/admin@localhost:1521
+         - EJECUTAR EL ARCHIVO "tablas_hr.sql", realizar todo el proceso que tiene el archivo.
+           start tablas_hr.sql
+           
+         por lo que se tendra que instalar, de lo contrario, seguir los siguientes pasos.
+
+         1. Conectarse como usuario system o sysdba + contraseña haciendo uso del comando connect.
+            Si en caso se ha vencido la contraseña, ir al siguiente enlace: https://www.dataprix.com/es/blog-it/ilmasacratore/recuperar-contrasena-del-usuario-sys-y-system-oracle-9i
+            - USUARIO:  SYSTEM
+            - PASSWORD: admin 
+   
+         2. Hacer uso  del comando alter user hr account unlock desbloqueamos la cuenta.
+            ALTER USER HR ACCOUNT UNLOCK;
+   
+         3. Escribimos el comando alter user HR identified by hr; con esto estamos diciendo que la contraseña será hr. 
+            ALTER USER HR IDENTIFIED BY HR;
+            
+            
+            
+            

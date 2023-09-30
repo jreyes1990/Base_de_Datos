@@ -175,4 +175,6 @@
           - LOBs. Large Objects.
           - Bind variables. Asociadas a los comandos SQL.
             
-            
+      
+      * CONSTANTES Y NULL:
+              

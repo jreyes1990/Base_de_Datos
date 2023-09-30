@@ -55,3 +55,24 @@
          - COUNTRIES: Contiene los paises.
            
         
+***** SECCION 2 - PREPARACION INFRAESTRUCTURA NECESARIA (SOLO SI NO LA TIENES) *****
+      * ORACLE EXPRESS:
+        - Edicion basica de la base de datos de Oracle.
+        - Es facil de descargar, instalar y administrar.
+        - Se puede utilizar sin cargos para desarrollar, implementar y distribuir.
+        - Se puede "integrar" en nuestras aplicaciones de forma gratuita.
+        - Existe version para windows y linux.
+       
+        
+      * ORACLE EXPRESS - LIMITACIONES:
+        - El tamaño de la base de datos no puede exceder de 12 GB.
+        - Solo estan soportadas 2 CPU.
+        - Como maximo 2GB de RAM.
+        - Solo se puede instalar una instancia en cada máquina.
+        - Carece de varias de las caracteristicas de las versiones Enterprise y Standar.
+        
+        
+     * ORACLE EXPRESS - REQUISITOS:
+       - Windows o linux
+       - 2GB de RAM
+       - 10GB de espacio en disco.

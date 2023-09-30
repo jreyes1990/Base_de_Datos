@@ -5,3 +5,12 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE(100);
   DBMS_OUTPUT.PUT_LINE('AAAAAA' || 'XXXXX');
 END;
+
+/******************************************************************************/
+/* PONER TU NOMBRE Y APELLIDOS EN PANTALLA */
+SET SERVEROUTPUT ON;
+
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('NOMBRE(S):'||'JOLBERTH ALBERTO');
+  DBMS_OUTPUT.PUT_LINE('APELLIDO(S):'||'REYES LOPEZ');
+END;

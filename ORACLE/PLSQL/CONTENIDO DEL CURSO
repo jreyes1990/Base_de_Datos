@@ -104,8 +104,75 @@
             
             
 ***** SECCION 5 - PRIMEROS PASOS EN PL/SQL *****
-      * BLOQUES ANONIMOS:
-        
+      * VARIABLES:
+        - Al igual que en otros lenguajes, PL/SQL dispones de variables para almacenar valores durante el desarrollo de los programas.
+          1. Pueden ser de distintos tipos.
+          2. Pueden ser utilizadas en comandos SQL.
+          3. Para nombrar una variable:
+             - Debe comenzar por una letra.
+             - Podemos incluir numeros o letras.
+             - Pueden tener algunos caracteres especiales:
+               ( $ , _ , etc )
+             - El nombre no puede ser mas largo de 30 caracteres.
+             - No podemos usar palabras reservadas.
+             
+             
+      * DONDE USAMOS LAS VARIABLES:
+        - Las variables se declaran e inicializan en la seccion DECLARE del bloque PL/SQL.
+        - Por tanto, si usamos alguna variable en el bloque ya es obligatorio poner la zona de declaracion.
+        - Podemos pasarlos como argumentos a otros programas PL/SQL.
+        - Pueden almacenar valores devueltos por otros programas PL/SQL.
+        - EJEMPLOS: 
+          DECLARE
+            SALARY     NUMBER(2);
+            NAME       VARCHAR2(100);
+            BIRTH_DATE DATE;
             
+            
+        - Para poner un valor a una variable se utilizar " := "
+        - EJEMPLOS: 
+          DECLARE
+            SALARY     NUMBER(2) := 1000;
+            NAME       VARCHAR2(100) := 'Jhon Connors';
+            BIRTH_DATE DATE := '16-jun-1989';
+        
+        
+        - En la zona BEGIN se utilizan como cualquier otro lenguaje de programacion.
+        - EJEMPLOS: 
+          DECLARE
+            SALARY     NUMBER(2) := 1000;
+            NAME       VARCHAR2(100) := 'Jhon Connors';
+            BIRTH_DATE DATE := '16-jun-1989';
+          BEGIN
+            SALARY := SALARY*10;
+            IF SALARY > 10000 THEN
+              .....
+              .....
+              
+              
+        - Tipos de variables:
+          - Escalares: Algunos ejemplos que usaremos dentro del curso.
+            01. CHAR(LONGUITUD)
+            02. VARCHAR2(LONGUITUD)
+            03. LONG
+            04. LONG RAW
+            05. NUMBER(PRECISION, ESCALA)
+            06. BINARY_INTEGER
+            07. PLS_INTEGER
+            08. BOOLEAN
+            09. BYNARY_FLOAT
+            10. BYNARY_DOUBLE
+            11. DATE
+            12. TIMESTAMP
+            13. TIMESTAMP WITH TIME ZONE
+            14. TIMESTAMP WITH LOCAL TIME ZONE
+            15. INTERNAL YEAR TO MONTH
+            16. INTERNAL DAY TO SECOND
+            
+           
+          - Compuestas.
+          - De Referencia.
+          - LOBs. Large Objects.
+          - Bind variables. Asociadas a los comandos SQL.
             
             

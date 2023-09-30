@@ -13,6 +13,37 @@
         10. PAQUETES.
         11. TRIGGERS.
         
+        
       * HERRAMIENTAS A UTILIZAR:
         - Oracle Database Express Edition 21c.
         - Oracle SQL Developer.
+        
+        
+      * PL/SQL:
+        - Lenguaje de programacion procedural desarrollado por Oracle para su base de datos.
+        - Integrado con sus bases de datos.
+       
+        
+      * QUE ES PL/SQL:
+        - Una extension procedural para el lenguaje SQL de Oracle.
+          - SQL no es un lenguaje procedural.
+          - PL/SQL permite suplir esas carencias.
+          
+        - Permite una mayor potencia la hora de acceder a Bases de Datos Oracle.
+        
+        
+       * BLOQUES PL/SQL:
+         - El objeto basico de PL/SQL es un bloque.
+         - Los bloques estan divididos en las siguientes secciones.
+           - DECLARE
+           - BEGIN
+           - EXCEPTION
+           - END 
+           
+       * TIPO DE PROGRAMAS PL/SQL:
+         - Existen distintos tipos de componentes en PL/SQL.
+           - BLOQUES ANONIMOS
+           - PROCEDIMIENTOS Y FUNCIONES
+           - TRIGGERS
+           
+        

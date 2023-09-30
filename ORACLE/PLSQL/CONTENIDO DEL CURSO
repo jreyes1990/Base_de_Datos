@@ -40,10 +40,18 @@
            - EXCEPTION
            - END 
            
+           
        * TIPO DE PROGRAMAS PL/SQL:
          - Existen distintos tipos de componentes en PL/SQL.
            - BLOQUES ANONIMOS
            - PROCEDIMIENTOS Y FUNCIONES
            - TRIGGERS
+           
+       * TABLAS A UTILIZAR DEL USUARIO "HR"
+         - EMPLOYEES: Tabla de empleados.
+         - DEPARTMENTS: Contiene los departamentos.
+         - REGIONS: Contiene las regiones.
+         - JOBS: Contiene los tipos de trabajos.
+         - COUNTRIES: Contiene los paises.
            
         

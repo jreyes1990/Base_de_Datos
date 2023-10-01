@@ -78,3 +78,23 @@ BEGIN
   END CASE;
   DBMS_OUTPUT.PUT_LINE('RESULTADO: '||RESULTADO);
 END;
+
+/******************************************************************************/
+/***** BUCLE LOOP *****/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  X NUMBER := 1;
+BEGIN
+  LOOP
+    DBMS_OUTPUT.PUT_LINE('RESULTADO: '||X);
+    X := X+1;
+    EXIT WHEN X=11;
+    /*
+    IF X=11 THEN
+      EXIT;
+    END IF;
+    */
+  END LOOP;
+END;
+

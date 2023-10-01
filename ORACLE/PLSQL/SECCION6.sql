@@ -123,3 +123,27 @@ BEGIN
   END LOOP parent;
   DBMS_OUTPUT.PUT_LINE('Finish!!!!');
 END;
+
+/******************************************************************************/
+/***** COMANDO CONTINUE *****/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  X NUMBER := 0;
+BEGIN
+  LOOP -- CON CONTINUE SALTAMOS AQUI
+    DBMS_OUTPUT.PUT_LINE('LOOP: X = '||X);
+    X := X+1;
+    CONTINUE WHEN X < 3;
+    /*
+    IF X < 3 THEN
+      CONTINUE;
+    END IF;
+    */
+    DBMS_OUTPUT.PUT_LINE('DESPUES DE CONTINUE: X = '||X);
+    EXIT WHEN X=5;
+  END LOOP;
+  DBMS_OUTPUT.PUT_LINE('DESPUES DEL LOOP: X = '||X);
+END;
+
+

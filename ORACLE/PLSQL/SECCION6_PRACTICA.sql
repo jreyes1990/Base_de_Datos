@@ -54,3 +54,38 @@ BEGIN
   END IF;
   DBMS_OUTPUT.PUT_LINE('RESPUESTA: '||RESPUESTA);
 END;
+
+/******************************************************************************/
+/***** COMANDO CASE - PRACTICA *****/
+/* • Vamos a crear una variable denominada "usuario", de tipo VARCHAR2(40)
+   • Vamos a poner dentro el nombre del usuario con el que nos hemos conectado. 
+     Para saberlo, usamos la función USER de Oracle que devuelve el nombre del 
+     usuario con el que estamos conectados (Recuerda que en Oracle no hace falta 
+     poner paréntesis si una función no tiene argumentos) usuario:=user
+     
+   • Luego hacermos un CASE para que nos pinte un mensaje del estilo:
+     o Si el usuario es SYS ponemos el mensaje "Eres superadministrador"
+     o Si el usuario es SYSTEM ponemos el mensaje "Eres un administrador normal"
+     o Si el usuario es HR ponemos el mensaje "Eres de Recursos humanos"
+     o Cualquier otro usuario ponemos "usuario no autorizado
+*/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  USUARIO VARCHAR2(40);
+  MENSAJE VARCHAR2(50);
+BEGIN
+  USUARIO := USER;
+  
+  CASE
+    WHEN USUARIO = 'SYS' THEN
+      MENSAJE := 'Eres Super Administrador';
+    WHEN USUARIO = 'SYSTEM' THEN
+      MENSAJE := 'Eres un Administrador normal';
+    WHEN USUARIO = 'HR' THEN
+      MENSAJE := 'Eres de Recursos Humanos';
+    ELSE
+      MENSAJE := 'Usuario no autorizado';
+  END CASE;
+  DBMS_OUTPUT.PUT_LINE('MENSAJE: '||MENSAJE);
+END;

@@ -172,7 +172,14 @@ SET SERVEROUTPUT ON;
 
 DECLARE
   DONE BOOLEAN := FALSE;
+  X NUMBER := 0;
 BEGIN
+  WHILE X<10 LOOP
+    DBMS_OUTPUT.PUT_LINE(X);
+    X := X+1;
+    EXIT WHEN X=5;
+  END LOOP;
+  
   WHILE DONE LOOP
     DBMS_OUTPUT.PUT_LINE('No imprimas esto.');
     DONE := TRUE;
@@ -182,4 +189,25 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('He pasado por aqui.');
     DONE := TRUE;
   END LOOP;
+END;
+
+/******************************************************************************/
+/***** COMANDO GOTO *****/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  P VARCHAR2(30);
+  N PLS_INTEGER := 5;
+BEGIN
+  FOR j IN 2..ROUND(SQRT(N)) LOOP
+    IF N MOD j=0 THEN
+      P := ': No es un numero primo';
+      GOTO print_now;
+    END IF;
+  END LOOP;
+  
+  P := ': Es un numero primo';
+  
+  <<print_now>>
+  DBMS_OUTPUT.PUT_LINE(n||p);
 END;

@@ -146,4 +146,22 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE('DESPUES DEL LOOP: X = '||X);
 END;
 
+/******************************************************************************/
+/***** BUCLE FOR *****/
+SET SERVEROUTPUT ON;
 
+BEGIN
+  FOR i IN 1..10 LOOP
+    DBMS_OUTPUT.PUT_LINE(i);
+  END LOOP;
+END;
+
+/***** BUCLE FOR REVERSE *****/
+SET SERVEROUTPUT ON;
+
+BEGIN
+  FOR i IN REVERSE 1..10 LOOP
+    DBMS_OUTPUT.PUT_LINE(i);
+    EXIT WHEN i=5;
+  END LOOP;
+END;

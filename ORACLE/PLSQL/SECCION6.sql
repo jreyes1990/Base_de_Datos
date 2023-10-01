@@ -165,3 +165,21 @@ BEGIN
     EXIT WHEN i=5;
   END LOOP;
 END;
+
+/******************************************************************************/
+/***** BUCLE WHILE *****/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  DONE BOOLEAN := FALSE;
+BEGIN
+  WHILE DONE LOOP
+    DBMS_OUTPUT.PUT_LINE('No imprimas esto.');
+    DONE := TRUE;
+  END LOOP;
+  
+  WHILE NOT DONE LOOP
+    DBMS_OUTPUT.PUT_LINE('He pasado por aqui.');
+    DONE := TRUE;
+  END LOOP;
+END;

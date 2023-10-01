@@ -42,4 +42,16 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE(Z);
 END;
 
+/******************************************************************************/
+/***** BLOQUES ANIDADOS *****/
+SET SERVEROUTPUT ON;
+
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('EN EL PRIMER BLOQUES');
+  DECLARE
+    X NUMBER := 10;
+  BEGIN
+    DBMS_OUTPUT.PUT_LINE(X);
+  END;
+END;
 

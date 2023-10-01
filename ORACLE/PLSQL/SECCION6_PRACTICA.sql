@@ -89,3 +89,148 @@ BEGIN
   END CASE;
   DBMS_OUTPUT.PUT_LINE('MENSAJE: '||MENSAJE);
 END;
+
+/******************************************************************************/
+/***** BUCLES - PRACTICA *****/
+/* 1. PRACTICA 1
+      • Vamos a crear la tabla de multiplicar del 1 al 10, con los tres tipos 
+        de bucles: LOOP, WHILE y FOR
+*/
+/***** BUCLE LOOP *****/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  X NUMBER := 1;
+  Y NUMBER := 1;
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('BUCLE LOOP');
+  LOOP
+    EXIT WHEN X=11;
+    DBMS_OUTPUT.PUT_LINE('Tabla de multiplicar del : '||X);
+    LOOP
+      EXIT WHEN Y=11;
+      DBMS_OUTPUT.PUT_LINE(X||' x '||(X*Y));
+      Y := Y+1;
+    END LOOP;
+    Y := 0;
+    X := X+1;
+  END LOOP;
+END;
+
+/***** BUCLE WHILE *****/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  X NUMBER := 1;
+  Y NUMBER := 1;
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('BUCLE WHILE');
+  WHILE X < 11 LOOP
+    DBMS_OUTPUT.PUT_LINE('Tabla de multiplicar del : '||X);
+    WHILE Y < 11 LOOP
+      DBMS_OUTPUT.PUT_LINE(X||' x '||(X*Y));
+      Y := Y+1;
+    END LOOP;
+    Y := 0;
+    X := X+1;
+  END LOOP;
+END;
+
+/***** BUCLE FOR *****/
+SET SERVEROUTPUT ON;
+
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('BUCLE FOR');
+  FOR X IN 1..10 LOOP
+    DBMS_OUTPUT.PUT_LINE('Tabla de multiplicar del : '||X);
+    FOR Y IN 1..10 LOOP
+      DBMS_OUTPUT.PUT_LINE(X||' x '||(X*Y));
+    END LOOP;
+  END LOOP;
+END;
+
+/* 2. PRACTICA 2-
+      • Crear una variable llamada TEXTO de tipo VARCHAR2(100).
+      • Poner alguna frase
+      • Mediante un bucle, escribir la frase al revés, Usamos el bucle WHILE
+*/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  TEXTO     VARCHAR2(100);
+  CONTADOR  NUMBER := 0;
+  AL_REVES  TEXTO%TYPE;
+BEGIN
+  TEXTO := 'PROGRAMADORES';
+  CONTADOR := LENGTH(TEXTO);
+  WHILE CONTADOR > 0 LOOP
+    AL_REVES := AL_REVES||SUBSTR(TEXTO,CONTADOR,1);
+    CONTADOR := CONTADOR-1;
+  END LOOP;
+  DBMS_OUTPUT.PUT_LINE('FRASE: '||TEXTO);
+  DBMS_OUTPUT.PUT_LINE('FRASE AL REVES: '||AL_REVES);
+END;
+
+/* 3. PRACTICA 3
+      • Usando la práctica anterior, si en el texto aparece el carácter "x" 
+        debe salir del bucle. Es igual en mayúsculas o minúsculas.
+      • Debemos usar la cláusula EXIT.
+*/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  TEXTO     VARCHAR2(100);
+  CONTADOR  NUMBER := 0;
+  AL_REVES  TEXTO%TYPE;
+BEGIN
+  TEXTO := 'ESTO ES UNA PRUEBA DE XRSE';
+  CONTADOR := LENGTH(TEXTO);
+  WHILE CONTADOR > 0 LOOP
+    EXIT WHEN SUBSTR(TEXTO,CONTADOR,1)='X';
+    AL_REVES := AL_REVES||SUBSTR(TEXTO,CONTADOR,1);
+    CONTADOR := CONTADOR-1;
+  END LOOP;
+  DBMS_OUTPUT.PUT_LINE('FRASE: '||TEXTO);
+  DBMS_OUTPUT.PUT_LINE('FRASE AL REVES: '||AL_REVES);
+END;
+
+/* 4. PRACTICA 4
+      • Debemos crear una variable llamada NOMBRE
+      • Debemos pintar tantos asteriscos como letras tenga el nombre.
+        Usamos un bucle FOR
+      • Por ejemplo Alberto → *******
+      • O por ejemplo Pedro → *****
+*/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  NOMBRE      VARCHAR2(100);
+  ASTERISCOS  NOMBRE%TYPE;
+BEGIN
+  NOMBRE := 'JOLBERTH';
+  FOR I IN 1..LENGTH(NOMBRE) LOOP
+    ASTERISCOS := ASTERISCOS||'*';
+  END LOOP;
+  DBMS_OUTPUT.PUT_LINE(NOMBRE||' => '||ASTERISCOS);
+END;
+
+/* 5. PRACTICA 5
+      • Creamos dos variables numéricas, "inicio y fin"
+      • Las inicializamos con algún valor:
+      • Debemos sacar los números que sean múltiplos de 4 de ese rango
+*/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  INICIO NUMBER;
+  FINAL NUMBER;
+BEGIN
+  INICIO:=10;
+  FINAL:=200;
+  FOR I IN INICIO..FINAL LOOP
+    IF MOD(I,4)=0 THEN
+      DBMS_OUTPUT.PUT_LINE(I);
+    END IF;
+  END LOOP;
+END;
+

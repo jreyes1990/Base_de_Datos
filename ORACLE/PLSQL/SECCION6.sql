@@ -30,4 +30,29 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE('SALES = '||SALES||', BONUS = '||BONUS||'.');
 END;
 
+/******************************************************************************/
+/***** COMANDO CASE *****/
+SET SERVEROUTPUT ON;
 
+DECLARE
+  V CHAR(1);
+  RESULTADO VARCHAR2(50);
+BEGIN
+  V := UPPER('f');
+  
+  CASE V 
+    WHEN 'A' THEN
+      RESULTADO := 'Excellent';
+    WHEN 'B' THEN
+      RESULTADO := 'Very Good';
+    WHEN 'C' THEN
+      RESULTADO := 'Good';
+    WHEN 'D' THEN
+      RESULTADO := 'Fair';
+    WHEN 'F' THEN
+      RESULTADO := 'Poor';
+    ELSE
+      RESULTADO := 'No such value';
+  END CASE;
+  DBMS_OUTPUT.PUT_LINE('RESULTADO: '||RESULTADO);
+END;

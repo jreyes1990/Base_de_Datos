@@ -17,3 +17,48 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE('IMPUESTO: '|| IMPUESTO ||'%');
   DBMS_OUTPUT.PUT_LINE('RESULTADO: '|| RESULTADO);  
 END;
+
+/******************************************************************************/
+/***** BLOQUES ANIDADOS - PRACTICAS *****/
+/* 1. Indicar que valores visualiza X en los 3 casos de DBMS_OUTPUT.PUT_LINE(x) en este ejemplo */
+SET SERVEROUTPUT ON;
+
+DECLARE
+  X NUMBER:=10;
+BEGIN
+  DBMS_OUTPUT.PUT_LINE(X); -- MUESTRA EL VALOR DE 10
+  DECLARE
+    X NUMBER:=20;
+  BEGIN
+    DBMS_OUTPUT.PUT_LINE(X); -- MUESTRA EL VALOR DE 20
+  END;
+  DBMS_OUTPUT.PUT_LINE(X); -- MUESTRA EL VALOR DE 10
+END;
+
+/* 2 .¿Es este bloque correcto? Si no es así ¿por qué falla?
+      Falla porque la variable X está solo en el bloque anidado y por tanto no puede ser vista desde el bloque principal */
+SET SERVEROUTPUT ON;
+
+BEGIN
+  DBMS_OUTPUT.PUT_LINE(X); -- ERROR: NO EXISTE UNA VARIABLE GLOBAL
+DECLARE
+  X NUMBER:=20;
+  BEGIN
+    DBMS_OUTPUT.PUT_LINE(X); -- MUESTRA EL VALOR DE 20
+  END;
+  DBMS_OUTPUT.PUT_LINE(X); -- ERROR: NO EXISTE UNA VARIABLE GLOBAL
+END;
+
+/* 3. ¿Es este bloque correcto? Si es así ¿qué valores visualiza X? */
+SET SERVEROUTPUT ON;
+
+DECLARE
+  X NUMBER:=10;
+BEGIN
+  DBMS_OUTPUT.PUT_LINE(X); -- MUESTRA EL VALOR DE 10
+  BEGIN
+    DBMS_OUTPUT.PUT_LINE(X); -- MUESTRA EL VALOR DE 10
+  END;
+  DBMS_OUTPUT.PUT_LINE(X); -- MUESTRA EL VALOR DE 10
+END;
+

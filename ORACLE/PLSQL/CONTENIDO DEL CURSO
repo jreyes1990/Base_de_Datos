@@ -182,5 +182,12 @@
       
 ***** SECCION 6 - ESTRUCTURAS DE CONTROL *****
 ***** SECCION 7 - USAR SQL EN PL/SQL *****
+      - ENLACE: https://magicplsql.blogspot.com/
+      - %TYPE: Se utiliza para declarar una variable de tipo columna. 
+               Dicha variable tiene el mismo tipo de dato y tamaño que la columna de la tabla.
+               
+      - %ROWTYPE: Se utiliza para declarar un Record que contenga toda la fila de una tabla o vista. 
+                  Los campos en el Record toman los nombres y tipos de datos de las columnas de la tabla o vista. 
+                  El Record también puede almacenar toda una fila de datos obtenida de un cursor o variable de cursor.
 
             

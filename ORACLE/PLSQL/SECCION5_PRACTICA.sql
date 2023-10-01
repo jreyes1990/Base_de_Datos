@@ -62,3 +62,44 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE(X); -- MUESTRA EL VALOR DE 10
 END;
 
+/******************************************************************************/
+/***** FUNCIONES - PRACTICAS *****/
+/* 1. VISUALIZAR INICIALES DE UN NOMBRE
+      • Crea un bloque PL/SQL con tres variables VARCHAR2:
+        - Nombre
+        - apellido1
+        - apellido2
+      • Debes visualizar las iniciales separadas por puntos.
+      • Además siempre en mayúscula
+      • Por ejemplo alberto pérez García debería aparecer--> A.P.G
+*/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  NOMBRE    VARCHAR2(50);
+  APELLIDO1 NOMBRE%TYPE;
+  APELLIDO2 NOMBRE%TYPE;
+  INICIALES NOMBRE%TYPE;
+BEGIN
+  NOMBRE    := 'alberto';
+  APELLIDO1 := 'perez';
+  APELLIDO2 := 'garcia';
+  INICIALES := UPPER(SUBSTR(NOMBRE,1,1)||'.'||SUBSTR(APELLIDO1,1,1)||'.'||SUBSTR(APELLIDO2,1,1));
+  DBMS_OUTPUT.PUT_LINE('INICIALES: '||INICIALES);
+END;
+
+/* 2. NOMBRE DEL DIA EN QUE NACESITE
+      Averiguar el nombre del día que naciste, por ejemplo "Martes"
+      • PISTA (Función TO_CHAR)
+*/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  FECHA           DATE;
+  DIA_NACIMIENTO  VARCHAR2(50);
+BEGIN
+  FECHA := '3/5/1990';
+  DIA_NACIMIENTO := TO_CHAR(TO_DATE(FECHA), 'DAY');
+  DBMS_OUTPUT.PUT_LINE('DIA NACIMIENTO: '||DIA_NACIMIENTO);
+END;
+

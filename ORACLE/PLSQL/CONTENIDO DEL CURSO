@@ -192,4 +192,28 @@
 
 ***** SECCION 8 - EXEPCIONES EN PL/SQL *****
       - ENLACE: https://magicplsql.blogspot.com/2016/10/manejo-de-excepciones.html
+      
+      * EXCEPCIONES PREDEFINIDAS, ENLACE: https://www.plsql.biz/2007/01/manejo-de-excepciones-el-plsql.html
+        Las excepciones predefinidas no necesitan ser declaradas y son las siguientes:
+        - DUP_VAL_ON_INDEX - Se produce cuando se intenta almacenar un valor ya existente en una columna que tiene restricción de índice único.
+        - TIMEOUT_ON_RESOURCE - Se excedió el tiempo máximo de espera por un recurso en Oracle.
+        - NOT_LOGGED_ON - El programa efectuó una llamada a Oracle sin estar conectado.
+        - LOGIN_DENIED - El login o la contraseña utilizados para entrar en Oracle son inválidos.
+        - NO_DATA_FOUND - Una sentencia SELECT INTO no devolvió ningún registro.
+        - TOO_MANY_ROWS - Una sentencia SELECT INTO devolvió más de un registro.
+        - ZERO_DIVIDE - Se ha ejecutado una división donde el divisor valía cero.
+        - STORAGE_ERROR - Si no se dispone de más memoria o la memoria esta dañada.
+        - PROGRAM_ERROR - Ocurrió un problema interno al ejecutar el código PL/SQL.
+        - INVALID_NUMBER - Cuando falla la conversión de una cadena de caracteres hacia un número porque la cadena no representa un número válido.
+        - VALUE_ERROR - Ocurrió un error aritmético, de conversión o truncamiento. Por ejemplo, esto sucede cuando se intenta dar un valor muy grande a una variable que no soporta dicho tamaño.
+        - ROWTYPE_MISMATCH - Los elementos de una asignación (el valor a asignar y la variable que lo contendrá) son de tipos incompatibles. 
+          También se presenta este error cuando un parámetro pasado a un subprograma no es del tipo esperado.
+        - SYS_INVALID_ROWID - Falla la conversión de una cadena de caracteres hacia un tipo rowid porque la cadena no representa un número.
+        - INVALID_CURSOR - Se efectuó una operación no válida sobre un cursor. Suele ocurrir cuando un cursor no está abierto y se ejecuta una sentencia para cerrar dicho cursor.
+        - CURSOR_ALREADY_OPEN - Cuando se intenta abrir un cursor que ya estaba abierto. Hay que recordar que un cursor de tipo FOR se abre automáticamente por lo que no se debe ejecutar la sentencia OPEN.
+        - ACCESS_INTO_NULL - Se intentó asignar un valor a los atributos de un objeto no inicializado.
+        - COLLECTION_IS_NULL - Se intentó asignar un valor a una tabla anidada aún no inicializada.
+        - SELF_IS_NULL - El parámetro SELF (el primero que es pasado a un método MEMBER) es nulo.
+        - OTHERS - Cualquier otro tipo de error que pueda producirse. Cuando se utiliza la excepción OTHERS, cualquier excepción que no se haya tratado anteriormente se procesará según la secuencia 
+          de instrucciones incluida dentro de la sección OTHERS. OTHERS debe ser la última excepción tratada dentro de la sección dedicada al tratamiento de excepciones.
 

@@ -192,6 +192,8 @@
 
 ***** SECCION 8 - EXEPCIONES EN PL/SQL *****
       - ENLACE: https://magicplsql.blogspot.com/2016/10/manejo-de-excepciones.html
+                https://hackmd.io/@salesiano/HJjitEFWd#Excepciones
+                https://docs.oracle.com/cd/B10501_01/nav/error_search.htm?remark=homepage&prefill=ORA-
       
       * EXCEPCIONES PREDEFINIDAS, ENLACE: https://www.plsql.biz/2007/01/manejo-de-excepciones-el-plsql.html
         Las excepciones predefinidas no necesitan ser declaradas y son las siguientes:

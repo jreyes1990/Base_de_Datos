@@ -39,3 +39,7 @@ BEGIN
     WHEN OTHERS THEN
       DBMS_OUTPUT.PUT_LINE('ERROR INDEFINIDO');
 END;
+
+/******************************************************************************/
+/***** EXCEPCIONES NO PREDEFINIDAS DE PL/SQL *****/
+SET SERVEROUTPUT ON;

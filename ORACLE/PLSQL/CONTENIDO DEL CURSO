@@ -190,4 +190,6 @@
                   Los campos en el Record toman los nombres y tipos de datos de las columnas de la tabla o vista. 
                   El Record también puede almacenar toda una fila de datos obtenida de un cursor o variable de cursor.
 
-            
+***** SECCION 8 - EXEPCIONES EN PL/SQL *****
+      - ENLACE: https://magicplsql.blogspot.com/2016/10/manejo-de-excepciones.html
+

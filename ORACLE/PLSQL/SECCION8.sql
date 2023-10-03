@@ -155,3 +155,6 @@ BEGIN
     WHEN OTHERS THEN
       DBMS_OUTPUT.PUT_LINE('ERROR INDEFINIDO');
 END;
+
+/******************************************************************************/
+/***** COMANDO RAISE_APPLICATION_ERROR *****/

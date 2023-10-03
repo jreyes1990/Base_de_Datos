@@ -79,3 +79,33 @@ BEGIN
     WHEN DUPLICADO THEN
       DBMS_OUTPUT.PUT_LINE('REGISTRO DUPLICADO');
 END;
+
+/******************************************************************************/
+/***** EXCEPCIONES DE USUARIO - PRACTICA *****/
+/* 1- Crear una Excepción personalizada denominada CONTROL_REGIONES.
+      • Debe dispararse cuando al insertar o modificar una región
+        queramos poner una clave superior a 200. Por ejemplo usando una
+        variable con ese valor.
+      • En ese caso debe generar un texto indicando algo así como
+        “Codigo no permitido. Debe ser inferior a 200”
+      • Recordemos que las excepciones personalizadas deben
+        dispararse de forma manual con el RAISE.
+*/
+SET SERVEROUTPUT ON;
+
+DECLARE
+  CONTROL_REGIONES EXCEPTION;
+  CODIGO           NUMBER := 201;
+BEGIN
+  IF CODIGO > 200 THEN
+    RAISE CONTROL_REGIONES;
+  ELSE
+    INSERT INTO REGIONS VALUES(CODIGO, 'PRUEBA');
+  END IF;
+  EXCEPTION
+    WHEN CONTROL_REGIONES THEN
+      DBMS_OUTPUT.PUT_LINE('EL CODIGO DEBE SER INFERIOR A 200');
+    WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE(SQLCODE);
+      DBMS_OUTPUT.PUT_LINE(SQLERRM);
+END;

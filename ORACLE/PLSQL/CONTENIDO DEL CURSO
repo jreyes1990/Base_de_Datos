@@ -218,4 +218,41 @@
         - SELF_IS_NULL - El parámetro SELF (el primero que es pasado a un método MEMBER) es nulo.
         - OTHERS - Cualquier otro tipo de error que pueda producirse. Cuando se utiliza la excepción OTHERS, cualquier excepción que no se haya tratado anteriormente se procesará según la secuencia 
           de instrucciones incluida dentro de la sección OTHERS. OTHERS debe ser la última excepción tratada dentro de la sección dedicada al tratamiento de excepciones.
+          
+          
+***** SECCION 9 - COLECCIONES Y TIPOS COMPUESTOS *****
+      * COLECCIONES Y TIPOS COMPUESTOS:
+        - Son componentes que pueden albergar multiples valores, a diferencia de los escalares que solo pueden tener 1.
+          - Son de 2 posibles tipos.
+            1. RECORDS.
+            2. COLLECTIOS.
+               - Arrays Asociativos (INDEX BY)
+               - NESTED TABLES
+               - VARRAYS
+               
+      * PL/SQL RECORDS:
+        - Son similares a los registros de una tabla.
+        - Pueden albergar una "FILA" de datos de distinctos tipos.
+        - Ya hemos visto un ejemplo al usar el atributo %ROWTYPE
+        - Podemos definir de forma personalizada con la clausula RECORD
+        
+     * COMO HACEMOS EL PL/SQL RECORDS?
+       - Primero debemos declarar o crear el tipo
+       - Su formato es el siguiente
+         TYPE nombre IS RECORD (campo1, campo2)
+       - Una vez declarado el tipo (plantilla) podemos crear variables de ese tipo
+         VARIABLE TIPO
+       - Los campos pueden ser de cualquier tipo, incluido otros RECORDS o COLLECTIONS
+         - Pueden llevar clausula NULL y clausula DEFAULT
+         
+     * EJEMPLO:
+       TYPE empleado IS RECORD(
+           nombre           VARCHAR2(100),
+           salario          NUMBER,
+           fecha            EMPLOYEES.hire_date%TYPE,
+           datos_completos  EMPLOYEES%ROWTYPE
+       )
+       
+       emple1 empleado;
+
 

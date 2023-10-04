@@ -286,4 +286,23 @@
        
 ***** SECCION 10 - CURSORES *****
       * CURSORES: ENLACE => https://www.tutorialspoint.com/plsql/plsql_cursors.htm
+        - CURSORES IMPLICITOS:
+          Oracle crea automáticamente cursores implícitos cada vez que se ejecuta una declaración SQL, cuando no hay un cursor explícito para la declaración.
+          - ATRIBUTOS: 
+            %FOUND: Devuelve VERDADERO si una instrucción INSERT, UPDATE o DELETE afectó a una o más filas o una instrucción SELECT INTO devolvió una o más filas. 
+                       En caso contrario devuelve FALSO.
+            %NOTFOUND: El opuesto lógico de %FOUND. Devuelve VERDADERO si una instrucción INSERT, UPDATE o DELETE no afectó a ninguna fila, 
+                         o si una instrucción SELECT INTO no devolvió ninguna fila. En caso contrario devuelve FALSO.
+            %ISOPEN: Siempre devuelve FALSO para cursores implícitos, porque Oracle cierra el cursor SQL automáticamente después de ejecutar su instrucción SQL asociada.
+            %ROWCOUNT: Devuelve el número de filas afectadas por una instrucción INSERT, UPDATE o DELETE, o devueltas por una instrucción SELECT INTO.
+            
+        - CURSORES EXPLICITOS:
+          Son cursores definidos por el programador para obtener más control sobre el área de contexto . Se debe definir un cursor explícito en la sección de declaración 
+          del bloque PL/SQL. Se crea en una instrucción SELECT que devuelve más de una fila.
+          
+          - Trabajar con un cursor explícito incluye los siguientes pasos:
+            - Declarar el cursor para inicializar la memoria.
+            - Abrir el cursor para asignar la memoria
+            - Obteniendo el cursor para recuperar los datos
+            - Cerrar el cursor para liberar la memoria asignada
 

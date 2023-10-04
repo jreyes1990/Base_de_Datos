@@ -1,0 +1,16 @@
+/******************************************************************************/
+/***** ATRIBUTOS IMPLICITOS DE PL/SQL *****/
+SET SERVEROUTPUT ON;
+
+BEGIN 
+  UPDATE TEST SET C2='PPPPPPP' WHERE C1=100;
+  DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT);
+  
+  IF SQL%FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('ENCONTRADO');
+  END IF;
+  
+  IF SQL%NOTFOUND THEN
+    DBMS_OUTPUT.PUT_LINE('NO ENCONTRADO');
+  END IF;
+END;

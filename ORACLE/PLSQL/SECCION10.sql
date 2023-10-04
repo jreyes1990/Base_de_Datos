@@ -14,3 +14,16 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('NO ENCONTRADO');
   END IF;
 END;
+
+/******************************************************************************/
+/***** CREAR UN CURSOR DE PL/SQL *****/
+DECLARE
+  CURSOR C1 IS 
+    SELECT * FROM REGIONS;
+  V1 REGIONS%ROWTYPE;
+BEGIN
+  OPEN C1; -- ABRIMOS EL CURSOR
+  FETCH C1 INTO V1; -- LEE EL CURSOR
+    DBMS_OUTPUT.PUT_LINE(V1.REGION_NAME);
+  CLOSE C1; -- CIERRA EL CURSOR
+END;

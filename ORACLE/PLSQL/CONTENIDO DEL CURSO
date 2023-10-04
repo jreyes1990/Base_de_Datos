@@ -255,4 +255,33 @@
        
        emple1 empleado;
 
+     * ASSOCIATIVE ARRAYS(INDEX BY TABLES)
+       - Son colecciones PL/SQL con 2 columnas
+         - CLAVE PRIMARIA de tipo entero o cadena.
+         - VALORES Un tipo que puede ser escalar, o RECORD
+         
+         
+     * SINTAXIS
+       TYPE nombre IS TABLE OF
+         TIPO COLUMNA: INDEX BY PLS_INTEGER | BINARY_INTEGER | VARCHAR2(X);
+         
+     * ACCESO AL ARRAY
+       - Para acceder al ARRAY usamos.
+         ARRAY(N)
+         
+       - Si es de un tipo complejo, por ejemplo EMPLOYEES, usamos
+         ARRAY(N).CAMPO
+         
+     * METODOS DE LOS ARRAYS
+       - EXISTS(N): Detectar si existe un elemento.
+       - COUNT: Numero de elementos
+       - FIRST: Devuelve el indice mas pequenio.
+       - LAST: Devuelve el indice mas alto.
+       - PRIOR(N): Devuelve el indice anterior a N.
+       - NEXT(N): Devuelve el indice posterior a N.
+       - DELETE: Borrar todo.
+       - DELETE(N): Borrar el indice N.
+       - DELETE(M,N): Borra de los indices M a N.
+       
+         
 

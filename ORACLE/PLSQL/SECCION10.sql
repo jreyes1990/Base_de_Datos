@@ -17,6 +17,8 @@ END;
 
 /******************************************************************************/
 /***** CREAR UN CURSOR DE PL/SQL *****/
+SET SERVEROUTPUT ON;
+
 DECLARE
   CURSOR C1 IS 
     SELECT * FROM REGIONS;
@@ -27,3 +29,6 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE(V1.REGION_NAME);
   CLOSE C1; -- CIERRA EL CURSOR
 END;
+
+/******************************************************************************/
+/***** RECORRER UN CURSOR CON UN BUCLE LOOP DE PL/SQL *****/

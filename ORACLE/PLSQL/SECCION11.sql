@@ -1,0 +1,16 @@
+/******************************************************************************/
+/***** PROCEDIMIENTOS Y FUNCIONES DE PL/SQL *****/
+/***** CREAR UN PROCEDIMIENTO DE PL/SQL *****/
+CREATE OR REPLACE PROCEDURE PR1
+IS
+  X NUMBER := 10;
+BEGIN
+  DBMS_OUTPUT.PUT_LINE(X);
+END;
+
+-- EJECUTANDO EL PROCEDIMIENTO
+EXECUTE PR1;
+
+BEGIN
+  PR1;
+END;

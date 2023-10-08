@@ -306,3 +306,9 @@
             - Obteniendo el cursor para recuperar los datos
             - Cerrar el cursor para liberar la memoria asignada
 
+***** SECCION 11 - FUNCIONES Y PROCEDIMIENTOS *****
+      * PROCEDIMIENTOS: ENLACE => https://www.tutorialspoint.com/plsql/plsql_procedures.htm
+      * FUNCIONES: ENLACE => https://www.tutorialspoint.com/plsql/plsql_functions.htm
+
+***** SECCION 12 - PACKAGES *****
+      * PACKAGE: ENLACE => https://www.tutorialspoint.com/plsql/plsql_packages.htm

@@ -138,7 +138,7 @@ CREATE OR REPLACE PACKAGE PKG_NOMINAS
 IS
   FUNCTION calcular_nomina(id number) RETURN NUMBER;
   FUNCTION calcular_nomina(id number,porcentaje varchar) RETURN NUMBER;
-  FUNCTION calcular_nomina(id number,porcentaje varchar2:='V') RETURN NUMBER;
+  FUNCTION calcular_nomina(id number,porcentaje NUMBER, tercero varchar2:='V') RETURN NUMBER;
 END PKG_NOMINAS;
 
 -- CREANDO EL CUERPO (BODY) DEL PACKAGE
@@ -170,7 +170,7 @@ IS
   END;
   
   --TERCERA FUNCION
-  FUNCTION calcular_nomina(id NUMBER, porcentaje NUMBER, tercero VARCHAR2 := 'V') 
+  FUNCTION calcular_nomina(id NUMBER, porcentaje NUMBER, tercero VARCHAR2 :='V') 
   RETURN NUMBER 
   IS
     salario_final NUMBER;
@@ -185,3 +185,12 @@ IS
   
 END PKG_NOMINAS;
 /
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+  x number;
+BEGIN
+  x:=PKG_NOMINAS.CALCULAR_NOMINA(150,'8');
+  DBMS_OUTPUT.PUT_LINE(x);
+END;

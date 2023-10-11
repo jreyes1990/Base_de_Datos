@@ -315,3 +315,94 @@
       
 ***** SECCION 13 - TRIGGERS *****
       * TRIGGER: ENLACE => https://www.tutorialspoint.com/plsql/plsql_triggers.htm
+      
+***** SECCION 14 - ORIENTADO A OBJETOS EN ORACLE Y PL/SQL *****
+      * INTRODUCCION  A OBJETOS:
+        - Oracle es una base de datos de tipo relacional y por lo tanto no es una base de datos tipo objeto.
+        - Sin embargo, Oracle incorpora funcionalidades que permiten trabajar con algunas de las caracteristicas
+          de las bases de datos orientadas a objeto.
+        - Hay que tener en cuenta que este tipo de base de datos representa la informacion mediante objetos, que son
+          similares a los que se utilizan en los lenguajes de desarrollo orientados a objeto.
+        - Por supuesto, una base de datos de este tipo permite implementar objetos complejos y se guia a traves de la
+          programacion orientada a objetos.
+          OBJETO <=======> ENTIDAD
+          
+       * OBJETO:
+         - Un objeto se crea atraves de una clase (plantilla) que define sus caracteristicas.
+         - A partir de la clase podemos crear (instanciar) multiples objetos.
+              OBJETO
+                 ^
+                 |
+                 |
+               CLASE
+               
+         - Una clase tiene atributos y metodos
+               OBJETO
+                 ^
+                 |
+                 |
+               CLASE <====> TIENE ATRIBUTOS Y METODOS
+               
+         - Otras caracteristicas de la orientacion a objetos
+                OBJETO
+                 ^
+                 |
+                 |
+               CLASE <====> POLIMORFISMO, HERENCIA, ENCAPSULACION, ETC
+               
+       * PARA CREAR UN OBJETO:
+         - En Oracle podemos crear una clase (plantilla) de esta forma:
+           - Primero creamos la definicion, como cuando creamos la cabecera de un paquetes.
+             CREATE OR REPLACE TYPE empleado AS OBJECT (
+                --Atributos
+                nombre varchar2(100),
+                apellidos varchar2(100),
+                Edad number,
+                --Métodos
+                MEMBER FUNCTION ver_nombre RETURN varchar2,
+                MEMBER FUNCTION ver_edad RETURN NUMBER
+             )
+             
+           - Luegos, creamos la especificacion o body del objeto
+             CREATE OR REPLACE TYPE body empleado as
+              MEMBER FUNCTION ver_nombre RETURN varchar2
+              IS
+              BEGIN
+               RETURN NOMBRE;
+              END;
+               MEMBER FUNCTION ver_edad RETURN NUMBER
+               IS
+               BEGIN
+                RETURN EDAD;
+               END;
+             END;
+             
+           - Luego, las podemos utilizar como tipos "normales" en PL/SQL
+             set serveroutput on format wrapped line 1000;
+             declare
+              v1 empleado:=empleado('pepe','rodriguez',89);
+             begin
+              dbms_output.put_line(v1.ver_nombre());
+             end;
+             /
+        
+           - Creamos una variable de ese tipo
+             set serveroutput on format wrapped line 1000;
+             declare
+              v1 empleado:=empleado('pepe','rodriguez',89);
+             begin
+              dbms_output.put_line(v1.ver_nombre());
+             end;
+             /
+             
+           - Inicializamos los valores con un constructor
+             set serveroutput on format wrapped line 1000;
+             declare
+              v1 empleado:=empleado('pepe','rodriguez',89); --<= El contructor inicializa los atributos
+             begin
+              dbms_output.put_line(v1.ver_nombre()); --<= Lo podemos usar con la notacion por punto
+             end;
+             /
+             
+           - Inicializamos los valores
+             

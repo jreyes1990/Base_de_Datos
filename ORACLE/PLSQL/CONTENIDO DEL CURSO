@@ -406,3 +406,18 @@
              
            - Inicializamos los valores
              
+             
+***** SECCION 15 - JSON EN ORACLE Y PL/SQL *****
+      * INTRODUCCION A JSON:
+        - Es un formato de intercambio de datos ligero y facil de leer orientado a su uso en la web.
+        - Significa "Java Script Object Notation".
+        - Es un estandar abierto y ampliamente utilizado en aplicaciones de software y servicios web.
+        - Transmite informacion en formato de texto plano entre servidores y aplicaciones cliente.
+        - JSON es compatible con lenguajes de programacion como JavaScript, Python, Java, entre otros.
+          Es decir, es independiente del lenguaje que usemos.
+        
+        - La estructura de un documento JSON consiste en una coleccion de pares clave-valor.
+        - En realidad es similar a la estructura de un objeto en JavaScript.
+        - Puede ser numeros, cadenas, booleanos, objetos (coleccion de pares clave-valor anidados),
+          o Arrays (lista ordenada de valores).
+          

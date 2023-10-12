@@ -420,4 +420,70 @@
         - En realidad es similar a la estructura de un objeto en JavaScript.
         - Puede ser numeros, cadenas, booleanos, objetos (coleccion de pares clave-valor anidados),
           o Arrays (lista ordenada de valores).
+      
+      * JSON en Oracle:
+        - A partir de la version Oracle Database 12.1.0.2 es posible trabajar con el formato JSON dentro de nuestra
+          base de datos relacional Oracle.
+        - A partir de la 21c se ha incorporado un tipo nativo JSON dentro de la base de datos.
+        - En versiones anteriores podemos guardar JSON en VARCHAR2, CLOB o BLOB.    
+        - Tenemos una serie de funciones y caracteristicas para trabajar con JSON.
+        - Desde de la 12c y antes de la 21c.
+          CREATE TABLE PRODUCTO(
+            CODIGO INT,
+            NOMBRE VARCHAR2(200),
+            DATOS BLOB
+          );
           
+          
+          CREATE TABLE PRODUCTO(
+            CODIGO INT,
+            NOMBRE VARCHAR2(200),
+            DATOS CLOB
+          );
+          
+          
+          CREATE TABLE PRODUCTO(
+            CODIGO INT,
+            NOMBRE VARCHAR2(200),
+            DATOS VARCHAR2(4000)
+          );
+          
+        - Desde de la 21c
+          CREATE TABLE PRODUCTO(
+            CODIGO INT,
+            NOMBRE VARCHAR2(200),
+            DATOS JSON
+          );
+          
+        - SQL. 
+          - Formas de acceder a los datos JSON
+          - Hay multiples funciones que podemos usar:
+            * JSON_VALUE
+            * JSON_QUERY
+            * JSON_TaBLE
+            * JSON_EXISTS
+            * IS JSON / IS NOT JSON
+            * JSON_TRANSFORM
+            
+        - Con la notacion por punto
+          SELECT PROD.PRODUCTOS.DATOS FROM PRODUCTOS.PROD;
+        
+        - PL/SQL
+          - Se usan en general las mismas funciones que en SQL.
+          - Tambien pueden usar objetos PL/SQL para gestionar los datos JSON:
+            * JSON_ELEMENT_T : Super tipo del que heredan algunos de los otros objetos no se suele utilizar directamente.
+            * JSON_OBJECT_T : Un objeto que representa un documento JSON.
+            * JSON_ARRAY_T : Un objeto que representa un array JSON.
+            * JSON_SCALAR_T : Un valor escalar asociado a una clave. Puede ser una cadena, un numero, boolean o NULL.
+            * JSON_KEY_LIST : Una array de claves.
+            
+          - EJEMPLO:
+            -- Trabajar con un objeto JSON
+               JSON1 := JSON_OBJECT_T('{"codigo_emple": 9999}');
+               JSON1.PUT('nombre', 'pepe');
+               JSON1.REMOVE('nombre');
+               JSON1.PUT('telefonos', JSON_ARRAY_T('["1111111", "2222222", "3333333"]'));
+               
+            -- Trabajar con array JSON
+               array1 := JSON_ARRAY_T('["rojo", "amarillo", "verde"]');
+               array1.append('azul');

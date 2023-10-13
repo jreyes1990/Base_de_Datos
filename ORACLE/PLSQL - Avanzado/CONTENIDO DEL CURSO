@@ -1,4 +1,9 @@
 ***** SECCION 1 - DEPENDENCIAS *****
       TABLA <======== VISTA <======== PROCEDIMIENTO
              DIRECTA        INDIRECTA
+             
+      * INTRODUCCION A LOS CURSORES VARIABLES
+        - Los cursores variables o REF CURSORS son referencias a otro cursores.
+        - Es por tanto un punture a un cursor.
+        - Se comportan como cursores casi normales, pero pueden cambiar de forma dinamica al curso al que apuntan.
       

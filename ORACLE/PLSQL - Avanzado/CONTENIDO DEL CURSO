@@ -6,4 +6,8 @@
         - Los cursores variables o REF CURSORS son referencias a otro cursores.
         - Es por tanto un punture a un cursor.
         - Se comportan como cursores casi normales, pero pueden cambiar de forma dinamica al curso al que apuntan.
-      
+        
+        
+***** SECCION 5 - BLOBS *****
+      * CONSULTA RUTA PARA GUARDAR LOS FICHEROS EN LINUX
+        pwd

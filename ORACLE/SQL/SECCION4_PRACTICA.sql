@@ -15,3 +15,12 @@ select country_name as nombre from countries;
 
 /*  5. Seleccionar las columnas STREET_ADDRESS, CITY, STATE_PROVINCE de la table LOCATIONS. Debemos poner las columnas como dirección, Ciudad y Estado  */
 select street_address as direccion, city as ciudad, state_province as estado from locations;
+
+
+/******************************************************************************/
+/***** OPERADORES ARITMETICOS - PRACTICAS *****/
+/*  1. Realizar una SELECT para visualizar el siguiente resultado. El impuesto es el 20% del salario.  */
+select first_name, salary as bruto, ((salary*20)/100) impuesto, (salary-((salary*20)/100)) as neto from employees order by first_name;
+
+/*  2. Visualizar el salario anual de cada empleado, por 14 pagas. Debemos visualizar las columnas como Nombre, Salario y Salario Anual */
+select first_name as nombre, salary as salario, (salary*14) as "Salario Anual" from employees;

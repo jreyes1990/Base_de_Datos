@@ -24,3 +24,12 @@ select first_name, salary as bruto, ((salary*20)/100) impuesto, (salary-((salary
 
 /*  2. Visualizar el salario anual de cada empleado, por 14 pagas. Debemos visualizar las columnas como Nombre, Salario y Salario Anual */
 select first_name as nombre, salary as salario, (salary*14) as "Salario Anual" from employees;
+
+
+/******************************************************************************/
+/***** LITERALES - PRACTICAS *****/
+/*  1. Crear la consulta para visualizar los siguientes datos, usando el operador de concatenación ||  */
+select 'El empleado '||first_name||' del departamento '||department_id||' tiene un salario de '||salary as datos from employees;
+
+/*  3. Crear la siguiente consulta  */
+select 'la calle '||street_address||' pertenece a la ciudad '||city from locations;

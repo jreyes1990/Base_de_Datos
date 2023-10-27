@@ -33,3 +33,12 @@ select 'El empleado '||first_name||' del departamento '||department_id||' tiene 
 
 /*  3. Crear la siguiente consulta  */
 select 'la calle '||street_address||' pertenece a la ciudad '||city from locations;
+
+
+/******************************************************************************/
+/***** DISTINCT - PRACTICAS *****/
+/*  1. Visualizar las ciudades donde hay departamentos, de la tabla locations. No deben salir repetidos  */
+select distinct city from locations;
+
+/*  2. Visualizar los distintos tipos de JOB_ID por departamento de la tabla Employees.  */
+select distinct department_id, job_id from employees;
